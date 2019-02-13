@@ -1,5 +1,5 @@
 <?php
-include("includes/connection.php");
+include("connection.php");
 
 	if(isset($_POST['sign_up'])){
 
@@ -50,7 +50,7 @@ include("includes/connection.php");
 
 		if($query){
 			echo "<script>alert('Well Done $first_name, you are good to go.')</script>";
-			echo "<script>window.open('signin.php', '_self')</script>";
+			echo "<script>window.open('index.php', '_self')</script>";
 		}
 		else{
 			echo "<script>alert('Registration failed, please try again!')</script>";
