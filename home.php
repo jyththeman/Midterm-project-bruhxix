@@ -97,12 +97,12 @@ if(!isset($_SESSION['user_email'])){
 
             <!-- begin row -->
                         <div class="row">
-                <div id="insert_post" class="col-lg-12">
+                <div id="insert_post" class="col-lg-12" style="margin-left: 80px;">
                     <center>
                         <form action="home.php?id=<?php echo $user_id; ?>" method="post" id="f" enctype="multipart/form-data">
                             <textarea class="form-control" id="content" rows="4" name="content" placeholder="What's in your mind?"></textarea><br>
-                            <label class="btn btn-primary" id="upload_image_button">Select Image
-                                <input type="file" name="upload_image" size="30">
+                            <label class="btn btn-success" id="upload_image_button">Select Image
+                                <input type="file" name="upload_image" size="50">
                             </label><br><br>
                             <button id="btn-post" class="btn btn-primary btn-block" name="sub">Post</button>
                         </form>
@@ -110,7 +110,7 @@ if(!isset($_SESSION['user_email'])){
                     </center>
                 </div>
                 <div class="row">
-                    <div class="col-lg-12">
+                    <div class="col-lg-12" style="margin-left: 150px;">
                         <center>
                             <h2><strong>News Feed</strong></h2><br>
                         </center>
