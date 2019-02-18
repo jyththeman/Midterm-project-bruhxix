@@ -1,7 +1,7 @@
 <style>
 .pagination a{
 	color: black;
-	float: left;
+	float: center;
 	padding: 8px 16px;
 	text-decoration: none;
 	transition: background-color .3s;

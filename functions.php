@@ -19,8 +19,8 @@ function insertPost(){
 			echo "<script>window.open('home.php', '_self')</script>";
 		}else{
 			if(strlen($upload_image) >= 1 && strlen($content) >= 1){
-				move_uploaded_file($image_tmp, "imagepost/$upload_image.$random_number");
-				$insert = "insert into posts (user_id, post_content, upload_image, post_date) values('$user_id', '$content', '$upload_image.$random_number', NOW())";
+				move_uploaded_file($image_tmp, "imagepost/$upload_image");
+				$insert = "insert into posts (user_id, post_content, upload_image, post_date) values('$user_id', '$content', '$upload_image', NOW())";
 
 				$run = mysqli_query($con, $insert);
 
@@ -106,28 +106,26 @@ function get_posts(){
 		if($content=="No" && strlen($upload_image) >= 1){
 			echo"
 			<div class='row'>
-				<div class='col-sm-3'>
-				</div>
-				<div id='posts' class='col-sm-6'>
+				<div id='posts' class='col-lg-12'>
 					<div class='row'>
-						<div class='col-sm-2'>
-						<p><img src='users/$user_image' class='img-circle' width='100px' height='100px'></p>
+						<div class='col-lg-12'>
+						<center><p><img src='users/$user_image' class='img-circle' width='100px' height='100px'></p></center>
 						</div>
-						<div class='col-sm-6'>
+						<div class='col-lg-12'>
 							<h3><a style='text-decoration:none; cursor:pointer;color #3897f0;' href='user_profile.php?u_id=$user_id'>$user_name</a></h3>
 							<h4><small style='color:black;'>Updated a post on <strong>$post_date</strong></small></h4>
 						</div>
-						<div class='col-sm-4'>
+						<div class='col-lg-12'>
 						</div>
 					</div>
 					<div class='row'>
-						<div class='col-sm-12'>
+						<div class='col-lg-12'>
 							<img id='posts-img' src='imagepost/$upload_image' style='height:350px;'>
 						</div>
 					</div><br>
 					<a href='single.php?post_id=$post_id' style='float:right;'><button class='btn btn-info'>Comment</button></a><br>
 				</div>
-				<div class='col-sm-3'>
+				<div class='col-lg-12'>
 				</div>
 			</div><br><br>
 			";
@@ -136,29 +134,27 @@ function get_posts(){
 		else if(strlen($content) >= 1 && strlen($upload_image) >= 1){
 			echo"
 			<div class='row'>
-				<div class='col-sm-3'>
-				</div>
-				<div id='posts' class='col-sm-6'>
+				<div id='posts' class='col-lg-12'>
 					<div class='row'>
-						<div class='col-sm-2'>
+						<div class='col-lg-12'>
 						<p><img src='users/$user_image' class='img-circle' width='100px' height='100px'></p>
 						</div>
-						<div class='col-sm-6'>
+						<div class='col-lg-12'>
 							<h3><a style='text-decoration:none; cursor:pointer;color #3897f0;' href='user_profile.php?u_id=$user_id'>$user_name</a></h3>
 							<h4><small style='color:black;'>Updated a post on <strong>$post_date</strong></small></h4>
 						</div>
-						<div class='col-sm-4'>
+						<div class='col-lg-12'>
 						</div>
 					</div>
 					<div class='row'>
-						<div class='col-sm-12'>
+						<div class='col-lg-12'>
 							<p>$content</p>
 							<img id='posts-img' src='imagepost/$upload_image' style='height:350px;'>
 						</div>
 					</div><br>
 					<a href='single.php?post_id=$post_id' style='float:right;'><button class='btn btn-info'>Comment</button></a><br>
 				</div>
-				<div class='col-sm-3'>
+				<div class='col-lg-12'>
 				</div>
 			</div><br><br>
 			";
@@ -167,18 +163,16 @@ function get_posts(){
 		else{
 			echo"
 			<div class='row'>
-				<div class='col-sm-3'>
-				</div>
-				<div id='posts' class='col-sm-6'>
+				<div id='posts' class='col-lg-12'>
 					<div class='row'>
-						<div class='col-sm-2'>
+						<div class='col-lg-12'>
 						<p><img src='users/$user_image' class='img-circle' width='100px' height='100px'></p>
 						</div>
-						<div class='col-sm-6'>
+						<div class='col-lg-12'>
 							<h3><a style='text-decoration:none; cursor:pointer;color #3897f0;' href='user_profile.php?u_id=$user_id'>$user_name</a></h3>
 							<h4><small style='color:black;'>Updated a post on <strong>$post_date</strong></small></h4>
 						</div>
-						<div class='col-sm-4'>
+						<div class='col-lg-12'>
 						</div>
 					</div>
 					<div class='row'>
@@ -188,7 +182,7 @@ function get_posts(){
 					</div><br>
 					<a href='single.php?post_id=$post_id' style='float:right;'><button class='btn btn-info'>Comment</button></a><br>
 				</div>
-				<div class='col-sm-3'>
+				<div class='col-lg-12'>
 				</div>
 			</div><br><br>
 			";

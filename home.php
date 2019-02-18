@@ -18,100 +18,99 @@ if(!isset($_SESSION['user_email'])){
 
 		$user_name = $row['user_name'];
 	?>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
+    <meta charset="utf-8" />
     <title>
-        <?php echo "$user_name"; ?>
-    </title>
+        <?php echo "$user_name"; ?> | Photo Share Community</title>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
 
-    <!-- Bootstrap Core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- ================== BEGIN BASE CSS STYLE ================== -->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+    <link href="assets/plugins/jquery-ui/jquery-ui.min.css" rel="stylesheet" />
+    <link href="assets/plugins/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="assets/plugins/font-awesome/5.0/css/fontawesome-all.min.css" rel="stylesheet" />
+    <link href="assets/plugins/animate/animate.min.css" rel="stylesheet" />
+    <link href="assets/css/default/style.min.css" rel="stylesheet" />
+    <link href="assets/css/default/style-responsive.min.css" rel="stylesheet" />
+    <link href="assets/css/default/theme/blue.css" rel="stylesheet" id="theme" />
+    <!-- ================== END BASE CSS STYLE ================== -->
 
-    <!-- MetisMenu CSS -->
-    <link href="vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+    <!-- ================== BEGIN PAGE LEVEL STYLE ================== -->
+    <link href="assets/plugins/jquery-jvectormap/jquery-jvectormap.css" rel="stylesheet" />
+    <link href="assets/plugins/bootstrap-datepicker/css/bootstrap-datepicker.css" rel="stylesheet" />
+    <link href="assets/plugins/gritter/css/jquery.gritter.css" rel="stylesheet" />
+    <!-- ================== END PAGE LEVEL STYLE ================== -->
 
-    <!-- Custom CSS -->
-    <link href="dist/css/sb-admin-2.css" rel="stylesheet">
-
-    <!-- Morris Charts CSS -->
-    <link href="vendor/morrisjs/morris.css" rel="stylesheet">
-
-    <!-- Custom Fonts -->
-    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
+    <!-- ================== BEGIN BASE JS ================== -->
+    <script src="assets/plugins/pace/pace.min.js"></script>
+    <!-- ================== END BASE JS ================== -->
+    <link rel="stylesheet" type="text/css" href="style/home_style2.css">
 </head>
 
 <body>
+    <!-- begin #page-loader -->
+    <div id="page-loader" class="fade show"><span class="spinner"></span></div>
+    <!-- end #page-loader -->
 
-    <div id="wrapper">
-
-        <!-- Navigation -->
-        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+    <!-- begin #page-container -->
+    <div id="page-container" class="fade page-sidebar-fixed page-header-fixed">
+        <!-- begin #header -->
+        <div id="header" class="header navbar-default">
+            <!-- begin navbar-header -->
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
+                <a href="index.html" class="navbar-brand"><span class="navbar-logo"></span> <b>Photo Share</b> Community</a>
+                <button type="button" class="navbar-toggle" data-click="sidebar-toggled">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="home.php">Photo Share Community</a>
             </div>
-            <!-- /.navbar-header -->
+            <!-- end navbar-header -->
 
-            <ul class="nav navbar-top-links navbar-right">
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
+            <!-- begin header-nav -->
+            <ul class="navbar-nav navbar-right">
+                <li class="dropdown navbar-user">
+                    <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
+                        <span class="d-none d-md-inline"></span><?php echo "$user_name"; ?> <b class="caret"></b>
                     </a>
-                    <ul class="dropdown-menu dropdown-user">
-                        <li><a href='profile.php?<?php echo "u_id=$user_id" ?>'><?php echo "$first_name"; ?></a></li>
-                        <li class="divider"></li>
-                        <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
-                        </li>
-                    </ul>
-                    <!-- /.dropdown-user -->
+                    <div class="dropdown-menu dropdown-menu-right">
+                   <a href='profile.php?<?php echo "u_id=$user_id" ?>' class="dropdown-item">Edit Pofile</a>
+                        <a href="logout.php" class="dropdown-item">Log Out</a>
+                    </div>
                 </li>
-                <!-- /.dropdown -->
             </ul>
-            <!-- /.navbar-top-links -->
+            <!-- end header navigation right -->
+        </div>
+        <!-- end #header -->
+        <!-- begin #content -->
+        <div id="content" class="content">
+            <!-- begin breadcrumb -->
+            <ol class="breadcrumb pull-right">
+                <li class="breadcrumb-item"><a href="javascript:;">Home</a></li>
+                <li class="breadcrumb-item active">Dashboard</li>
+            </ol>
+            <!-- end breadcrumb -->
+            <!-- begin page-header -->
+            <center><h1 class="page-header">PHOTO SHARE COMMUNITY</h1></center>
+            <!-- end page-header -->
 
-
-        </nav>
-
-        <div id="page-wrapper">
-            <div class="row">
-                <div class="col-lg-12">
-                    <center><h1 class="page-header">PHOTO SHARE COMMUNITY</h1></center>
-                </div>
-                <!-- /.col-lg-12 -->
-            </div>
-            <!-- /.row -->
-            <div class="row">
-                <div id="insert_post" class="col-sm-12">
+            <!-- begin row -->
+                        <div class="row">
+                <div id="insert_post" class="col-lg-12">
                     <center>
                         <form action="home.php?id=<?php echo $user_id; ?>" method="post" id="f" enctype="multipart/form-data">
                             <textarea class="form-control" id="content" rows="4" name="content" placeholder="What's in your mind?"></textarea><br>
                             <label class="btn btn-primary" id="upload_image_button">Select Image
                                 <input type="file" name="upload_image" size="30">
                             </label><br><br>
-                            <button id="btn-post" class="btn btn-outline btn-primary btn-lg" name="sub">Post</button>
+                            <button id="btn-post" class="btn btn-primary btn-block" name="sub">Post</button>
                         </form>
                         <?php insertPost(); ?>
                     </center>
                 </div>
                 <div class="row">
-                    <div class="col-sm-12">
+                    <div class="col-lg-12">
                         <center>
                             <h2><strong>News Feed</strong></h2><br>
                         </center>
@@ -119,27 +118,50 @@ if(!isset($_SESSION['user_email'])){
                     </div>
                 </div>
             </div>
+            <!-- end row -->
         </div>
-        <!-- /#page-wrapper -->
+        <!-- end #content -->
 
+
+        <!-- begin scroll to top btn -->
+        <a href="javascript:;" class="btn btn-icon btn-circle btn-success btn-scroll-to-top fade" data-click="scroll-top"><i class="fa fa-angle-up"></i></a>
+        <!-- end scroll to top btn -->
     </div>
-    <!-- /#wrapper -->
+    <!-- end page container -->
 
-    <!-- jQuery -->
-    <script src="vendor/jquery/jquery.min.js"></script>
+    <!-- ================== BEGIN BASE JS ================== -->
+    <script src="assets/plugins/jquery/jquery-3.2.1.min.js"></script>
+    <script src="assets/plugins/jquery-ui/jquery-ui.min.js"></script>
+    <script src="assets/plugins/bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
+    <!--[if lt IE 9]>
+		<script src="assets/crossbrowserjs/html5shiv.js"></script>
+		<script src="assets/crossbrowserjs/respond.min.js"></script>
+		<script src="assets/crossbrowserjs/excanvas.min.js"></script>
+	<![endif]-->
+    <script src="assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="assets/plugins/js-cookie/js.cookie.js"></script>
+    <script src="assets/js/theme/default.min.js"></script>
+    <script src="assets/js/apps.min.js"></script>
+    <!-- ================== END BASE JS ================== -->
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <!-- ================== BEGIN PAGE LEVEL JS ================== -->
+    <script src="assets/plugins/gritter/js/jquery.gritter.js"></script>
+    <script src="assets/plugins/flot/jquery.flot.min.js"></script>
+    <script src="assets/plugins/flot/jquery.flot.time.min.js"></script>
+    <script src="assets/plugins/flot/jquery.flot.resize.min.js"></script>
+    <script src="assets/plugins/flot/jquery.flot.pie.min.js"></script>
+    <script src="assets/plugins/sparkline/jquery.sparkline.js"></script>
+    <script src="assets/plugins/jquery-jvectormap/jquery-jvectormap.min.js"></script>
+    <script src="assets/plugins/jquery-jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+    <script src="assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+    <script src="assets/js/demo/dashboard.min.js"></script>
+    <!-- ================== END PAGE LEVEL JS ================== -->
 
-    <!-- Metis Menu Plugin JavaScript -->
-    <script src="vendor/metisMenu/metisMenu.min.js"></script>
-
-    <!-- Morris Charts JavaScript -->
-    <script src="vendor/raphael/raphael.min.js"></script>
-
-    <!-- Custom Theme JavaScript -->
-    <script src="dist/js/sb-admin-2.js"></script>
-
+    <script>
+        $(document).ready(function() {
+            App.init();
+        });
+    </script>
 </body>
 
 </html>

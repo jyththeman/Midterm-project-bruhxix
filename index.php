@@ -1,81 +1,109 @@
 <!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if !IE]><!-->
 <html lang="en">
-
+<!--<![endif]-->
 <head>
-
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>Login | Photo Share Community</title>
-
-    <!-- Bootstrap Core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- MetisMenu CSS -->
-    <link href="vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
-
-    <!-- Custom CSS -->
-    <link href="dist/css/sb-admin-2.css" rel="stylesheet">
-
-    <!-- Custom Fonts -->
-    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
+	<meta charset="utf-8" />
+	<title>PHOTO SHARE COMMUNITY</title>
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+	<meta content="" name="description" />
+	<meta content="" name="author" />
+	
+	<!-- ================== BEGIN BASE CSS STYLE ================== -->
+	<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+	<link href="assets/plugins/jquery-ui/jquery-ui.min.css" rel="stylesheet" />
+	<link href="assets/plugins/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" />
+	<link href="assets/plugins/font-awesome/5.0/css/fontawesome-all.min.css" rel="stylesheet" />
+	<link href="assets/plugins/animate/animate.min.css" rel="stylesheet" />
+	<link href="assets/css/default/style.min.css" rel="stylesheet" />
+	<link href="assets/css/default/style-responsive.min.css" rel="stylesheet" />
+	<link href="assets/css/default/theme/blue.css" rel="stylesheet" id="theme" />
+	<!-- ================== END BASE CSS STYLE ================== -->
+	
+	<!-- ================== BEGIN BASE JS ================== -->
+	<script src="assets/plugins/pace/pace.min.js"></script>
+	<!-- ================== END BASE JS ================== -->
 </head>
-
-<body>
-
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4 col-md-offset-4">
-                <div class="login-panel panel panel-default">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">Login to Photo Share Community</h3>
-                    </div>
-                    <div class="panel-body">
-                        <form action="" method="post">
-                            <fieldset>
-                                <div class="form-group">
-                                    <input class="form-control" placeholder="Email" name="email" type="email" autofocus required>
-                                </div>
-                                <div class="form-group">
-                                    <input class="form-control" placeholder="Password" name="pass" type="password" required>
-                                </div>
-                                <div class="form-group">
-                                    <a href="signup.php" class="">No account yet? Sign up</a>
-                                </div>
-                                <!-- Change this to a button or input when using this as a form -->
-                                <button id="signin" class="btn btn-outline btn-success btn-lg btn-block" name="login">Login</button>
-                            </fieldset>
-                               <?php include("login.php"); ?>
-                        </form>
-                    </div>
+<body class="pace-top bg-white">
+	<!-- begin #page-loader -->
+	<div id="page-loader" class="fade show"><span class="spinner"></span></div>
+	<!-- end #page-loader -->
+	
+	<!-- begin #page-container -->
+	<div id="page-container" class="fade">
+	    <!-- begin login -->
+        <div class="login login-with-news-feed">
+            <!-- begin news-feed -->
+            <div class="news-feed">
+                <div class="news-image" style="background-image: url(assets/img/login-bg/login-bg-11.jpg)"></div>
+                <div class="news-caption">
+                    <h4 class="caption-title"><b>Photo Share</b> Community</h4>
+                    <p>
+                        The Online Photography Gallery
+                    </p>
                 </div>
             </div>
+            <!-- end news-feed -->
+            <!-- begin right-content -->
+            <div class="right-content">
+                <!-- begin login-header -->
+                <div class="login-header">
+                    <div class="brand">
+                       <center><b>Photo Share</b> Community</center>
+                    </div>
+                </div>
+                <!-- end login-header -->
+                <!-- begin login-content -->
+                <div class="login-content">
+                     <form action="" method="post">
+                        <div class="form-group m-b-15">
+                            <input type="email" class="form-control form-control-lg" placeholder="Email Address" name="email" autofocus required />
+                        </div>
+                        <div class="form-group m-b-15">
+                            <input type="password" class="form-control form-control-lg" placeholder="Password" name="pass" required />
+                        </div>
+                        <div class="login-buttons">
+                            <button id="signin" name="login" type="submit" class="btn btn-primary btn-block btn-lg">Sign in</button>
+                        </div>
+                        <div class="m-t-20 m-b-40 p-b-40 text-inverse">
+                            Not a member yet? Click <a href="signup.php" class="text-success">here</a> to register.
+                        </div>
+                        <hr />
+                        <p class="text-center text-grey-darker">
+                            &copy; BRUHXIX All Right Reserved 2019
+                        </p>
+                         <?php include("login.php"); ?>
+                    </form>
+                </div>
+                <!-- end login-content -->
+            </div>
+            <!-- end right-container -->
         </div>
-    </div>
+        <!-- end login -->
+        
+	</div>
+	<!-- end page container -->
+	
+	<!-- ================== BEGIN BASE JS ================== -->
+	<script src="assets/plugins/jquery/jquery-3.2.1.min.js"></script>
+	<script src="assets/plugins/jquery-ui/jquery-ui.min.js"></script>
+	<script src="assets/plugins/bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
+	<!--[if lt IE 9]>
+		<script src="assets/crossbrowserjs/html5shiv.js"></script>
+		<script src="assets/crossbrowserjs/respond.min.js"></script>
+		<script src="assets/crossbrowserjs/excanvas.min.js"></script>
+	<![endif]-->
+	<script src="assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+	<script src="assets/plugins/js-cookie/js.cookie.js"></script>
+	<script src="assets/js/theme/default.min.js"></script>
+	<script src="assets/js/apps.min.js"></script>
+	<!-- ================== END BASE JS ================== -->
 
-    <!-- jQuery -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-
-    <!-- Metis Menu Plugin JavaScript -->
-    <script src="vendor/metisMenu/metisMenu.min.js"></script>
-
-    <!-- Custom Theme JavaScript -->
-    <script src="dist/js/sb-admin-2.js"></script>
-
+	<script>
+		$(document).ready(function() {
+			App.init();
+		});
+	</script>
 </body>
-
 </html>
