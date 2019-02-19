@@ -20,7 +20,7 @@ if(!isset($_SESSION['user_email'])){
 	?>
     <meta charset="utf-8" />
     <title>
-        <?php echo "$user_name"; ?> | Photo Share Community</title>
+        <?php echo $first_name . " " . " " . $last_name ?> | Photo Share Community</title>
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
     <meta content="" name="description" />
     <meta content="" name="author" />
@@ -34,6 +34,8 @@ if(!isset($_SESSION['user_email'])){
     <link href="assets/css/default/style.min.css" rel="stylesheet" />
     <link href="assets/css/default/style-responsive.min.css" rel="stylesheet" />
     <link href="assets/css/default/theme/blue.css" rel="stylesheet" id="theme" />
+      	<link href="assets/plugins/isotope/isotope.css" rel="stylesheet" />
+  	<link href="assets/plugins/lightbox/css/lightbox.css" rel="stylesheet" />
     <!-- ================== END BASE CSS STYLE ================== -->
 
     <!-- ================== BEGIN PAGE LEVEL STYLE ================== -->
@@ -59,7 +61,7 @@ if(!isset($_SESSION['user_email'])){
         <div id="header" class="header navbar-default">
             <!-- begin navbar-header -->
             <div class="navbar-header">
-                <a href="index.html" class="navbar-brand"><span class="navbar-logo"></span> <b>Photo Share</b> Community</a>
+                <a href="home.php" class="navbar-brand"><span class="navbar-logo"></span> <b>Photo Share</b> Community</a>
                 <button type="button" class="navbar-toggle" data-click="sidebar-toggled">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
@@ -72,10 +74,11 @@ if(!isset($_SESSION['user_email'])){
             <ul class="navbar-nav navbar-right">
                 <li class="dropdown navbar-user">
                     <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
-                        <span class="d-none d-md-inline"></span><?php echo "$user_name"; ?> <b class="caret"></b>
+                        <span class="d-none d-md-inline"></span>
+                       <?php echo $first_name . " " . " " . $last_name ?> <b class="caret"></b>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right">
-                   <a href='profile.php?<?php echo "u_id=$user_id" ?>' class="dropdown-item">Edit Pofile</a>
+                        <a href='profile.php?<?php echo "u_id=$user_id" ?>' class="dropdown-item">Edit Pofile</a>
                         <a href="logout.php" class="dropdown-item">Log Out</a>
                     </div>
                 </li>
@@ -92,12 +95,18 @@ if(!isset($_SESSION['user_email'])){
             </ol>
             <!-- end breadcrumb -->
             <!-- begin page-header -->
-            <center><h1 class="page-header">PHOTO SHARE COMMUNITY</h1></center>
+            <h1 class="page-header">PHOTO SHARE COMMUNITY</h1>
             <!-- end page-header -->
-
-            <!-- begin row -->
-                        <div class="row">
-                <div id="insert_post" class="col-lg-12" style="margin-left: 80px;">
+   <div class="col-lg-12" style="margin-left: 90px;">
+            <!-- begin panel -->
+            <div class="panel panel-inverse" data-sortable-id="ui-general-1">
+                <!-- begin panel-heading -->
+                <div class="panel-heading">
+                    <h4 class="panel-title">Alerts</h4>
+                </div>
+                <!-- end panel-heading -->
+                <!-- begin panel-body -->
+                <div class="panel-body">
                     <center>
                         <form action="home.php?id=<?php echo $user_id; ?>" method="post" id="f" enctype="multipart/form-data">
                             <textarea class="form-control" id="content" rows="4" name="content" placeholder="What's in your mind?"></textarea><br>
@@ -109,11 +118,17 @@ if(!isset($_SESSION['user_email'])){
                         <?php insertPost(); ?>
                     </center>
                 </div>
+                <!-- end panel-body -->
+            </div>
+            <!-- end panel -->
+            </div>
+            <!-- begin row -->
+            <div class="row">
+             
+
+              
                 <div class="row">
-                    <div class="col-lg-12" style="margin-left: 150px;">
-                        <center>
-                            <h2><strong>News Feed</strong></h2><br>
-                        </center>
+                    <div class="col-md-10" style="margin-left: 50px;">
                         <?php echo get_posts(); ?>
                     </div>
                 </div>
@@ -156,11 +171,26 @@ if(!isset($_SESSION['user_email'])){
     <script src="assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
     <script src="assets/js/demo/dashboard.min.js"></script>
     <!-- ================== END PAGE LEVEL JS ================== -->
+    
+    	<!-- ================== BEGIN PAGE LEVEL JS ================== -->
+	<script src="assets/plugins/isotope/jquery.isotope.min.js"></script>
+  	<script src="assets/plugins/lightbox/js/lightbox.min.js"></script>
+	<script src="assets/js/demo/gallery.demo.min.js"></script>
+    	<script src="../assets/js/demo/timeline.demo.min.js"></script>
+	<!-- ================== END PAGE LEVEL JS ================== -->
 
     <script>
         $(document).ready(function() {
             App.init();
+            Gallery.init();
+            Timeline.init();
         });
+    </script>
+    <script>
+        window.onload = () => {
+            let el = document.querySelector('[alt="www.000webhost.com"]').parentNode.parentNode;
+            el.parentNode.removeChild(el);
+        }
     </script>
 </body>
 

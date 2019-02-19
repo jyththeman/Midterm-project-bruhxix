@@ -21,16 +21,7 @@ include("functions.php");
 
 		$user_name = $row['user_name'];
 	?>
-                        <?php echo "$user_name"; ?>
-                        <small>User</small>
-                    </div>
-                </a>
-            </li>
-        </ul>
-        <!-- end sidebar user -->
-        <!-- begin sidebar nav -->
-        <ul class="nav">
-            <?php 
+                        <?php 
 			$user = $_SESSION['user_email'];
 			$get_user = "select * from users where user_email='$user'"; 
 			$run_user = mysqli_query($con,$get_user);
@@ -57,6 +48,16 @@ include("functions.php");
 			$run_posts = mysqli_query($con,$user_posts); 
 			$posts = mysqli_num_rows($run_posts);
 			?>
+                        <?php echo $first_name . " " . " " . $last_name ?>
+                        <small>Photo Share Community User</small>
+                    </div>
+                </a>
+            </li>
+        </ul>
+        <!-- end sidebar user -->
+        <!-- begin sidebar nav -->
+        <ul class="nav">
+            
             <li class="has-sub active">
                 <a href="home.php">
                     <i class="fa fa-th-large"></i>
@@ -64,9 +65,6 @@ include("functions.php");
                 </a>
             </li>
 
-            <!-- begin sidebar minify button -->
-            <li><a href="javascript:;" class="sidebar-minify-btn" data-click="sidebar-minify"><i class="fa fa-angle-double-left"></i></a></li>
-            <!-- end sidebar minify button -->
         </ul>
         <!-- end sidebar nav -->
     </div>

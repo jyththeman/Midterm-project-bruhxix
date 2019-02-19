@@ -18,7 +18,7 @@ include("connection.php");
 		$check_username_query = "select user_name from users where user_email='$email'";
 		$run_username = mysqli_query($con,$check_username_query);
 
-		if(strlen($pass) <9 ){
+		if(strlen($pass) < 9 ){
 			echo"<script>alert('Password should be minimum 9 characters!')</script>";
 			exit();
 		}
